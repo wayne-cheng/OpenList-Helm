@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ template "openlist.name" . }}
+    chart: {{ template "openlist.chart" . }}
+    release: {{ .Release.Name }}
+  name: {{ template "openlist.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "openlist.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "openlist.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - env:
+        - name: TZ
+          value: UTC
+        - name: UMASK
+          value: "022"
+        name: {{ .Chart.Name }}
+        image: "{{ .Values.image.registry}}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.http.port }}
+          protocol: TCP
+        - containerPort: {{ .Values.service.https.port }}
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /opt/openlist/data
+          name: openlist-data
+      restartPolicy: Always
+      enableServiceLinks: false
+      securityContext:
+        fsGroup: 1001
+      volumes:
+      - name: openlist-data
+        persistentVolumeClaim:
+          claimName: {{ template "openlist.fullname" . }}
