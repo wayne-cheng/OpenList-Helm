@@ -1,0 +1,20 @@
+apiVersion: v1
+entries:
+  openlist:
+  - apiVersion: v1
+    appVersion: v4.1.5
+    created: "2025-10-28T15:50:13.214187184+08:00"
+    description: OpenList is a resilient, long-term governance, community-driven fork
+      of AList - built to defend open source against trust-based attacks.
+    digest: 832e2a81809855a3d871b9a6cc8d77dcc2e5e558a9d066c2b8379f849e75f26e
+    home: https://oplist.org/
+    icon: https://raw.githubusercontent.com/OpenListTeam/Logo/main/logo.svg
+    keywords:
+    - openlist
+    name: openlist
+    sources:
+    - https://github.com/OpenListTeam/OpenList.git
+    urls:
+    - https://github.com/wayne-cheng/OpenList-Helm/releases/download/0.1.0/openlist-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-10-28T15:50:13.213563708+08:00"
