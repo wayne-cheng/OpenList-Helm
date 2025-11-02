@@ -15,6 +15,6 @@ entries:
     sources:
     - https://github.com/OpenListTeam/OpenList.git
     urls:
-    - https://github.com/wayne-cheng/OpenList-Helm/releases/download/0.1.0/openlist-0.1.0.tgz
+    - https://github.com/openlistteam/OpenList-Helm/releases/download/0.1.0/openlist-0.1.0.tgz
     version: 0.1.0
 generated: "2025-10-28T15:50:13.213563708+08:00"

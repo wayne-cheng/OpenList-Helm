@@ -21,7 +21,7 @@ helm package charts/openlist
 ## Update `index.yaml`
 
 ```shell
-helm repo index --url https://wayne-cheng.github.io/helm-chart/  --merge index.yaml .
+helm repo index --url https://openlistteam.github.io/helm-chart/  --merge index.yaml .
 ```
 
 Please modify the urls field in the `index.yaml` file to point to the actual file URL in the GitHub Releases.

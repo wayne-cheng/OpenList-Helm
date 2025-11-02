@@ -10,7 +10,7 @@ This chart bootstraps OpenList on [Kubernetes](http://kubernetes.io) using the [
 ## Configure OpenList Helm repo
 
 ```bash
-helm repo add openlist https://wayne-cheng.github.io/OpenList-Helm
+helm repo add openlist https://openlistteam.github.io/OpenList-Helm
 helm repo update
 ```
 
